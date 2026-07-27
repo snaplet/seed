@@ -5,6 +5,10 @@ runs:
   steps:
     - name: Install Nix
       uses: nixbuild/nix-quick-install-action@v26
+      with:
+        nix_conf: |
+          extra-substituters = https://devenv.cachix.org
+          extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
 
     - name: Restore and cache Nix store
       uses: avallete/cache-nix-action@v0.0.1
